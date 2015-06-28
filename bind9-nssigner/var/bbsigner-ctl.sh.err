@@ -1,0 +1,5 @@
+Unable to find image 'cm2c/nssigner:latest' locally
+Pulling repository cm2c/nssigner
+Error: image cm2c/nssigner:latest not found
+Error response from daemon: Conflict. The name "cm2c_signer" is already in use by container bc85a2625900. You have to delete (or rename) that container to be able to reuse that name.
+Error response from daemon: Conflict. The name "cm2c_signer" is already in use by container bc85a2625900. You have to delete (or rename) that container to be able to reuse that name.

@@ -1,0 +1,23 @@
+; secure.xt6.us: The fortune cookie zone.
+;
+secure.xt6.us.	60	IN	SOA	ns1.he.net. hostmaster.he.net. (
+					2015062209	;serial
+					10800		;refresh
+					1800		;retry
+					604800		;expire
+					86400	)	;minimum
+;
+secure.xt6.us.	60	IN	NS	ns1.he.net.
+secure.xt6.us.	60	IN	NS	ns2.he.net.
+secure.xt6.us.	60	IN	NS	ns3.he.net.
+secure.xt6.us.	60	IN	NS	ns4.he.net.
+secure.xt6.us.	60	IN	NS	ns5.he.net.
+;
+a.secure.xt6.us.	60	IN	TXT	"This is a secure TXT record. How interesting."
+;
+b.secure.xt6.us.	60	IN	TXT "Do not believe in miracles -- rely on them."
+b.secure.xt6.us.	60	IN	TXT "All the troubles you have will pass away very quickly."
+b.secure.xt6.us.	60	IN	TXT "You are filled with a sense of urgency. Be patient or you may end up confused."
+b.secure.xt6.us.	60	IN	TXT "Getting there is only half as far as getting there and back."
+;
+c.secure.xt6.us.	60	IN	TXT "You already know the answer to the questions lingering inside your head."

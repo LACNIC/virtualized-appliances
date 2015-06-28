@@ -1,0 +1,6 @@
+.vagrant
+*.jbk
+*.jnl
+*.signed
+*.err
+*.log
