@@ -1,0 +1,44 @@
+# Ejemplo de aplicacion multi capa
+#
+
+Vagrant.configure("2") do |config|
+
+	config.vm.box = "ubuntu/trusty64"
+
+	config.vm.provision "shell", inline: <<-SHELL
+		sudo apt-get update
+	SHELL
+
+	## Web server
+	config.vm.define "web" do |web|
+		# web.vm.box = "apache"
+		web.vm.network "private_network", ip: "10.77.0.20"
+
+		# vm parameters
+		web.vm.provider "virtualbox" do |vb|
+		   # Customize the amount of memory on the VM:
+		   vb.memory = "1024"
+		end		
+
+		web.vm.provision "shell", inline: <<-SHELL1
+			sudo apt-get install -y apache2
+			sudo apt-get install -y mysql-client
+		SHELL1
+	end
+
+	## Database server
+	config.vm.define "db" do |db|
+		# db.vm.box = "mysql"
+		db.vm.network "private_network", ip: "10.77.0.30"
+		# vm parameters
+		db.vm.provider "virtualbox" do |vb|
+		   # Customize the amount of memory on the VM:
+		   vb.memory = "1024"
+		end				
+		db.vm.provision "shell", inline: <<-SHELL
+			sudo apt-get install -y mysql-server-5.5
+			sudo apt-get install -y mysql-client
+		SHELL
+	end
+
+end
