@@ -4,3 +4,4 @@
 *.signed
 *.err
 *.log
+*.tar.gz
