@@ -1,7 +1,7 @@
 FROM ubuntu:15.04
 MAINTAINER carlos@xt6.us
 WORKDIR /root
-COPY rpki-validator-app-2.20-dist.tar.gz ripeval.tar.gz
+# COPY rpki-validator-app-2.20-dist.tar.gz ripeval.tar.gz
 RUN apt-get update
 RUN apt-get install -y wget
 RUN apt-get install -y openjdk-7-jre 

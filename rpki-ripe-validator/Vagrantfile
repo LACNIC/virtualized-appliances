@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       # Customize the amount of memory on the VM:
       vb.memory = "2048"
       # name
-      vb.name = "docker-rpki-container"
+      # vb.name = "docker-rpki-container"
    end  
   
   config.vm.provision "shell", inline: <<-SHELL
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "docker" do |d|
-    d.pull_images "debian:wheezy"
+    # d.pull_images "debian:wheezy"
     #
     # d.build_image "/opt/dfiles/rpkinet", args: "-t cm2c/rpkinet:1.0"
     # d.run "cm2c/ripeval:1.0", args: "-p 8080 ./ripeval/rpki-validator.sh"
