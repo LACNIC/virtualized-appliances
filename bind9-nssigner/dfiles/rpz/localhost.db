@@ -1,0 +1,18 @@
+localhost.	60	IN	SOA	ns1.he.net. hostmaster.he.net. (
+					2015062209	;serial
+					10800		;refresh
+					1800		;retry
+					604800		;expire
+					86400	)	;minimum
+;
+localhost.	60	IN	NS	ns1.localhost.
+ns1.localhost.	60	IN	A	127.0.0.1
+;
+a.localhost.	60	IN	TXT	"This is a secure TXT record. How interesting."
+;
+b.localhost.	60	IN	TXT "Do not believe in miracles -- rely on them."
+b.localhost.	60	IN	TXT "All the troubles you have will pass away very quickly."
+b.localhost.	60	IN	TXT "You are filled with a sense of urgency. Be patient or you may end up confused."
+b.localhost.	60	IN	TXT "Getting there is only half as far as getting there and back."
+;
+c.localhost.	60	IN	TXT "You already know the answer to the questions lingering inside your head."
