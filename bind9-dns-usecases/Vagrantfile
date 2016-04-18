@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   
   config.vm.box = "ubuntu/trusty64"
   config.vm.network "forwarded_port", guest: 53, host: 53
-  config.vm.synced_folder "config", "/opt/config"
+  # config.vm.synced_folder "config", "/opt/config"
   config.vm.synced_folder "dfiles", "/opt/dfiles"
   
   config.vm.provider "virtualbox" do |vb|
