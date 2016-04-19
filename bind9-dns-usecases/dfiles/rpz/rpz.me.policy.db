@@ -1,0 +1,24 @@
+;;
+;;
+$TTL 10
+$ORIGIN rpz.me.
+;
+
+@	 IN	SOA localhost. Hostmaster.LACNIC.NET. (
+				105	   ; serial
+				7200       ; refresh (2 hours)
+				3600       ; retry (1 hour)
+				648736     ; expire (1 week 12 hours 12 minutes 16 seconds)
+				600        ; minimum (10 minutes)
+				)
+
+;; AUTHORITY SECTION:
+@	IN	NS localhost.
+
+;; policy sections
+;; note that the policy record DOES NOT END on a dot
+eventos.google.com	IN	CNAME 	10
+10			IN	A 	192.168.1.10
+
+;;
+;;
