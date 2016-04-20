@@ -1,0 +1,28 @@
+;;
+;;
+$TTL 10
+$ORIGIN dpol.
+;
+
+@	 IN	SOA dpol. Hostmaster.LACNIC.NET. (
+				106	   ; serial
+				7200       ; refresh (2 hours)
+				3600       ; retry (1 hour)
+				648736     ; expire (1 week 12 hours 12 minutes 16 seconds)
+				600        ; minimum (10 minutes)
+				)
+
+;; AUTHORITY SECTION:
+@	IN	NS localhost.
+
+;; policy sections
+;; note that the policy record DOES NOT END on a dot
+eventos.yahoo.com	IN	CNAME 	10
+eventos.lanacion.com.ar	IN	CNAME 	10
+eventos.lacnic.net	IN	CNAME	10
+networking.lacnic.net	IN	CNAME	10
+nuc1.lacnic.net		IN	CNAME	10
+10			IN	A 	192.168.1.10
+
+;;
+;;

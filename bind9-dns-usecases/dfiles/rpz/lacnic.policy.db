@@ -1,11 +1,11 @@
 ;;
 ;;
-$TTL 60
+$TTL 86400
 $ORIGIN p.lacnic.net.
 ;
 
 p.lacnic.net. IN	SOA NS.LACNIC.NET. Hostmaster.LACNIC.NET. (
-				101	   ; serial
+				105	   ; serial
 				7200       ; refresh (2 hours)
 				3600       ; retry (1 hour)
 				648736     ; expire (1 week 12 hours 12 minutes 16 seconds)
@@ -13,18 +13,19 @@ p.lacnic.net. IN	SOA NS.LACNIC.NET. Hostmaster.LACNIC.NET. (
 				)
 
 ;; AUTHORITY SECTION:
-p.lacnic.net.		IN	NS ns.p.lacnic.net.
+p.lacnic.net.		IN	NS localhost.
+;p.lacnic.net.		IN	NS ns.p.lacnic.net.
 
 ;;
 
 ;; ADDITIONAL SECTION:
 ns.p.lacnic.net.	IN	 A 200.3.13.10
-ns.p.lacnic.net.	IN	 AAAA 2001:13c7:7002:3000::10
+;; ns.p.lacnic.net.	IN	 AAAA 2001:13c7:7002:3000::10
 
 ;; policy sections
 ;; note that the policy record DOES NOT END on a dot
-eventos.lacnic.net	IN	CNAME eventos.p.lacnic.net.
-eventos.p.lacnic.net.	IN	A 192.168.1.10
+eventos.lacnic.net		IN	CNAME eventos.p.lacnic.net.
+eventos.p.lacnic.net.		IN	A 192.168.1.10
 
 networking.lacnic.net		IN	CNAME networking.p.lacnic.net.
 networking.p.lacnic.net.	IN	A 192.168.1.10
