@@ -61,3 +61,29 @@ Note that the left-side names (eventos.yahoo.com) are not terminated in a dot, m
 This policy zone actually points the names "eventos.yahoo.com", "networking.lacnic.net" to a CNAME record which in turn points them to the IP address 192.168.1.10.
 
 The zone itself is a normal zone. It can be slaved from other servers, etc.
+
+## Verifying the operation of the RPZ
+
+Using dig, a check similar to this can be performed:
+
+```
+carlos@potomac ~> dig @192.168.1.10 eventos.lacnic.net.
+
+; <<>> DiG 9.8.3-P1 <<>> @192.168.1.10 eventos.lacnic.net
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;eventos.lacnic.net.		IN	A
+
+;; ANSWER SECTION:
+eventos.lacnic.net.	5	IN	CNAME	10.dpol.
+10.dpol.		10	IN	A	192.168.1.10
+
+;; AUTHORITY SECTION:
+dpol.			10	IN	NS	localhost.
+
+;; Query time: 2 msec
+;; SERVER: 192.168.1.10#53(192.168.1.10)
+```
+
+Note how the absolute (including a finishing dot) query for "eventos.lacnic.net." is nevertheless transformed into a query inside the rpz, the 'dpol' zone in this example.
