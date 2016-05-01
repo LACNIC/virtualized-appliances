@@ -8,8 +8,8 @@ INSTANCE=$1
 CONT_NAME="cm2c_$INSTANCE"
 HOST_PORT="53"
 DOCKER_BIN="/usr/bin/docker"
-DOCKER_OPTS=""
-BIND_OPTS=""
+DOCKER_OPTS="--mac-address='00:00:00:00:00:01'"
+BIND_OPTS="-g -c /v/dfiles/$INSTANCE/named.conf"
 # echo "# Booting bind instance $INSTANCE, with base $WD, mounted on /v"
 
 cd $WD
@@ -21,8 +21,8 @@ echo J=$J\;
 echo export J\;
 
 # echo "# starting new instance"
-J=$($DOCKER_BIN run --name=$CONT_NAME -p $HOST_PORT:5301 -p $HOST_PORT:5301/udp -v $WD:/v cm2c/basebind9:1.0 \
- /opt/bbsigner/sbin/named -4 -g $BIND_OPTS -c /v/dfiles/$INSTANCE/named.conf)
+J=$($DOCKER_BIN run $DOCKER_OPTS --name=$CONT_NAME -p $HOST_PORT:53 -p $HOST_PORT:53/udp -v $WD:/v cm2c/basebind9:1.0 \
+ /opt/bbsigner/sbin/named $BIND_OPTS)
 echo J=$J\;
 echo export J\;
 echo echo $CONT_NAME started\;
