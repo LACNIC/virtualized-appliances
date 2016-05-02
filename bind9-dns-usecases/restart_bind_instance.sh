@@ -5,11 +5,12 @@
 # WD=$(dirname $0)
 WD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 INSTANCE=$1
+CONFIG_FILE=$2
 CONT_NAME="cm2c_$INSTANCE"
 HOST_PORT="53"
 DOCKER_BIN="/usr/bin/docker"
 DOCKER_OPTS="--mac-address='00:00:00:00:00:01'"
-BIND_OPTS="-g -c /v/dfiles/$INSTANCE/named.conf"
+BIND_OPTS="-g -c /v/dfiles/$INSTANCE/$CONFIG_FILE"
 # echo "# Booting bind instance $INSTANCE, with base $WD, mounted on /v"
 
 cd $WD
