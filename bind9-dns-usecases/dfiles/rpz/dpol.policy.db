@@ -5,7 +5,7 @@ $ORIGIN dpol.
 ;
 
 @	 IN	SOA dpol. Hostmaster.LACNIC.NET. (
-				110	   ; serial
+				111	   ; serial
 				7200       ; refresh (2 hours)
 				3600       ; retry (1 hour)
 				648736     ; expire (1 week 12 hours 12 minutes 16 seconds)
@@ -17,11 +17,11 @@ $ORIGIN dpol.
 
 ;; policy sections
 ;; note that the policy record DOES NOT END on a dot
-eventos.yahoo.com	IN	CNAME 	10
-eventos.lanacion.com.ar	IN	CNAME	eventos-local	
-eventos.lacnic.net	IN	CNAME	eventos-local	
-networking.lacnic.net	IN	CNAME	eventos-local	
-10			IN	A 	192.168.1.10
+; eventos.yahoo.com	IN	CNAME 	10
+; eventos.lanacion.com.ar	IN	CNAME	eventos-local	
+; eventos.lacnic.net	IN	CNAME	eventos-local	
+; networking.lacnic.net	IN	CNAME	eventos-local	
+; 10			IN	A 	192.168.1.10
 eventos-local		IN	A	200.0.86.15
 eventos-local2		IN	A	200.0.86.16
 
