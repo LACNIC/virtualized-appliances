@@ -1,0 +1,9 @@
+# /etc/sysconfig/docker
+#
+# Other arguments to pass to the docker daemon process
+# These will be parsed by the sysv initscript and appended
+# to the arguments list passed to docker -d
+
+other_args=" --ipv6 --fixed-cidr-v6='2001:13c7:7003:200:8::/80'"
+# other_args=" --ipv6 --fixed-cidr-v6='2001:13c7:7003:ffe::/64'"
+# other_args=""
