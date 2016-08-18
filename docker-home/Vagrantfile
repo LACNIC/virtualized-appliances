@@ -1,0 +1,33 @@
+# Run Docker containers from Vagrant
+#
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/wily64"
+  config.vm.network "forwarded_port", guest: 8087, host: 80
+  # config.vm.synced_folder "config", "/opt/config"
+  config.vm.synced_folder "dfiles", "/opt/dfiles"
+
+  config.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      vb.gui = false
+      # Customize the amount of memory on the VM:
+      vb.memory = "2048"
+      # name
+      vb.name = "docker-home"
+   end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo mkdir -p /opt/config || /bin/true
+    sudo mkdir -p /opt/dfiles || /bin/true
+  SHELL
+
+  config.vm.provision "docker" do |d|
+    d.pull_images "ubuntu:16.04"
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+	echo "Provisioning completed!"
+  SHELL
+
+end
