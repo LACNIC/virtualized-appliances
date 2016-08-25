@@ -4,9 +4,10 @@
 Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/wily64"
-  config.vm.network "forwarded_port", guest: 8087, host: 80
-  # config.vm.synced_folder "config", "/opt/config"
+  config.vm.network "forwarded_port", guest: 80, host: 8087
+
   config.vm.synced_folder "dfiles", "/opt/dfiles"
+  config.vm.synced_folder "var", "/opt/var"
 
   config.vm.provider "virtualbox" do |vb|
       # Display the VirtualBox GUI when booting the machine
@@ -17,13 +18,19 @@ Vagrant.configure("2") do |config|
       vb.name = "docker-home"
    end
 
+   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
   config.vm.provision "shell", inline: <<-SHELL
+    #sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
     sudo mkdir -p /opt/config || /bin/true
     sudo mkdir -p /opt/dfiles || /bin/true
+    sudo apt-get -y update
+    sudo apt-get -y dist-upgrade
   SHELL
 
   config.vm.provision "docker" do |d|
     d.pull_images "ubuntu:16.04"
+    d.pull_images "ubuntu:15.04"
   end
 
   config.vm.provision "shell", inline: <<-SHELL
