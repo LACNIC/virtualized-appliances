@@ -1,11 +1,11 @@
 #!/bin/bash
 # Author- Dario Gomez
 
-#if [ -d /opt/splunk ]
-#then
+if [ -d /opt/splunk ]
+then
 	echo "******************************** Ya esta todo instalado ******************************"
 
-#else
+else
 
 	# Updating repository
 	sudo apt-get -y update
@@ -32,8 +32,9 @@
 	exit
 	
 	echo "******************************** Instalación finalizada *******************************"
-#fi
+fi
 
+# No es necesario correr el start, ya lo hace automatico ahora
 #echo "******************************** Iniciando Splunk ********************************"
 #start Splunk
 #sudo su
