@@ -4,7 +4,11 @@ Author: dario@lacnic.net
 
 Entorno virtualizado en vagrant para la herrmienta de análisis de datos SPLUNK en la versión light.
 
-## Pasos para arrancar
+### Caracteristicas
+
+- Ubuntu server
+
+### Pasos para arrancar
 
 Dentro de la carpeta raiz del proyecto, correr:
 
