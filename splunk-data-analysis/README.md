@@ -22,3 +22,6 @@ Dentro de la carpeta raiz del proyecto, correr:
 vagrant up --provision
 ```
 
+## Instalación en Docker
+
+Para instalar una instancia de docker con splunk se debe seguir el siguiente link: https://github.com/outcoldman/docker-splunk
