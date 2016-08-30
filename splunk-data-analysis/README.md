@@ -5,7 +5,7 @@ Author: dario@lacnic.net
 Entorno virtualizado en vagrant para la herrmienta de análisis de datos SPLUNK en la versión light.
 Cuando se inicia por primera vez, el scritp actualiza e instala todos los paquetes necesarios para comenzar a usar el software.
 
-**IMPORTANTE:** Es necesario descargar el archivo .deb (splunklight*.deb) del sitio del splunk para tener la última versión. 
+**IMPORTANTE:** Es necesario descargar el archivo .deb (splunklight*.deb) del sitio del splunk para tener la última versión. (http://www.splunk.com/en_us/products/splunk-light.html)
 
 ### Caracteristicas
 
