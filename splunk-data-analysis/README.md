@@ -2,6 +2,8 @@
 
 Author: dario@lacnic.net
 
+## Instalación en Vagrant
+
 Entorno virtualizado en vagrant para la herrmienta de análisis de datos SPLUNK en la versión light.
 Cuando se inicia por primera vez, el scritp actualiza e instala todos los paquetes necesarios para comenzar a usar el software.
 
