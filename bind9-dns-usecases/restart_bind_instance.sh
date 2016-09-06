@@ -1,5 +1,5 @@
 #!/bin/bash
-# Boot bind-based signer
+# Boot docker container for a specific DNS 'use case'
 # WD=/vagrant
 # WD=$(pwd)
 # WD=$(dirname $0)
