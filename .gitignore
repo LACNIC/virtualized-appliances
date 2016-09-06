@@ -6,4 +6,5 @@ post_to_slack_result.txt
 *.err
 *.log
 *.tar.gz
+*.deb
 named.stats

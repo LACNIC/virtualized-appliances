@@ -39,3 +39,4 @@ fi
 #start Splunk
 #sudo su
 #/opt/splunk/bin/splunk start --accept-license
+
