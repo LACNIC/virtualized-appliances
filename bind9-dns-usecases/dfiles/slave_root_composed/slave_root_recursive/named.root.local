@@ -3,13 +3,8 @@
 ; root hints file used for locally slaving the root zone
 ;
 ; -----------------------------------------------------------
-.                        3600000      NS	a.root.local.
-a.root.local.	         3600000      A		172.18.0.2
 
-.                        3600000      NS	a.root-servers.net.
-a.root-servers.net.      3600000      A		172.18.0.2
-
-.                        3600000      NS	b.root-servers.net.
-b.root-servers.net.      3600000      A		172.18.0.2
+.                        360      NS	a.root-loc.
+a.root-loc.	         360      A	172.19.0.2
 
 ; End of file

@@ -1,0 +1,42 @@
+
+; <<>> DiG 9.10.2 <<>> www.lacnic.net +trace
+;; global options: +cmd
+.			10	IN	NS	a.root-loc.
+;; Received 67 bytes from 172.19.0.2#53(172.19.0.2) in 0 ms
+
+net.			172800	IN	NS	m.gtld-servers.net.
+net.			172800	IN	NS	k.gtld-servers.net.
+net.			172800	IN	NS	c.gtld-servers.net.
+net.			172800	IN	NS	f.gtld-servers.net.
+net.			172800	IN	NS	i.gtld-servers.net.
+net.			172800	IN	NS	l.gtld-servers.net.
+net.			172800	IN	NS	h.gtld-servers.net.
+net.			172800	IN	NS	a.gtld-servers.net.
+net.			172800	IN	NS	e.gtld-servers.net.
+net.			172800	IN	NS	b.gtld-servers.net.
+net.			172800	IN	NS	j.gtld-servers.net.
+net.			172800	IN	NS	g.gtld-servers.net.
+net.			172800	IN	NS	d.gtld-servers.net.
+;; Received 528 bytes from 172.19.0.2#53(a.root-loc) in 0 ms
+
+lacnic.net.		172800	IN	NS	ns2.dns.br.
+lacnic.net.		172800	IN	NS	sec3.apnic.net.
+lacnic.net.		172800	IN	NS	ns.lacnic.net.
+lacnic.net.		172800	IN	NS	tinnie.arin.net.
+lacnic.net.		172800	IN	NS	ns2.lacnic.net.
+lacnic.net.		172800	IN	NS	dns.anycast.lacnic.net.
+lacnic.net.		86400	IN	DS	21598 5 1 F1CB0F524B94014563B114C8003A2F2EF6164C19
+lacnic.net.		86400	IN	RRSIG	DS 8 2 86400 20161004050057 20160927035057 2480 net. n90xG6CxAY8MCyslX7oILJ56mHM6GQnhBX1pVNoXvCi00PndpwYKm3hh OBPu0C5+5IQFpssdhEX+8540Vmn2DKy/yN2T3eutZ/0AZr/xRB0uo4nJ KcfgWrVOsc+exKRnJbWn9BmuuO0aoCSlMlQVWGNruHNwYhi51dJxS0LW Se0=
+;; Received 598 bytes from 192.41.162.30#53(l.gtld-servers.net) in 170 ms
+
+www.LACNIC.NET.		7200	IN	A	200.3.14.147
+www.LACNIC.NET.		7200	IN	RRSIG	A 5 3 7200 20161009125818 20160909125359 48072 lacnic.net. bVxye365QZcUAER/ppXAruUfbbe18MoB2Y64OefaRnbvc8byqSt/CKW2 vz95nusJeCWVvT3LXGDVX902gSNFvgLQlY9ZLJOnhifvl9S4pvXKjgBY 2rjHC9vGYtYv9uw7RAWzWdvugd7wwY4JGlp7h3ha2ArY8CV/SZViuAsH S6aOUrFO4xYc790SurRrndcrYk4oALcHp128PvfItsBjT+K67nsYnKts y1tGE1h9maLynqTQFKsEIXOiiU7+iFLgr5jnggI3Z/iNH9xJiLfQbZQE zQqikfrZl4uW39XJc3XT/7WVdhTCNzg2V4tBcdlk1eDcfWRVDN0ezZgS b3YIyA==
+LACNIC.NET.		7200	IN	NS	dns.anycast.lacnic.net.
+LACNIC.NET.		7200	IN	NS	TINNIE.ARIN.NET.
+LACNIC.NET.		7200	IN	NS	SEC3.APNIC.NET.
+LACNIC.NET.		7200	IN	NS	NS2.LACNIC.NET.
+LACNIC.NET.		7200	IN	NS	ns2.dns.br.
+LACNIC.NET.		7200	IN	NS	NS.LACNIC.NET.
+LACNIC.NET.		7200	IN	RRSIG	NS 5 2 7200 20161009114810 20160909110009 48072 lacnic.net. ckT42eHgZtQrtbmSzQtQOLhVaptN4zpe3k0kU8jkJLPaxXofOrY7vyyw 5gtwPY/Ppqifs2/5EQunE/V0+CNitP1gy8kgTG7d4bmlQRPoilLr3aP8 D8RAQzmY1oiwORS6v2BDieegD8rwgpMe1WQpi2KiSITsmxgDgDACGJam rc9tNlppkwRsVDDm7va6b+OBEpE4nXhsdEhLEQx807iO7jSzBdT8K48d wvfANM09jhGFuQH9UQ1LIr94pfiFfw60r3PbDEv44ianxL22MN3un0Lg cZfWjxyatUt34LZERrg3KAgjj398VGzHbbLwmK3Gj7BIQ3fCbGj77paV MBvVpw==
+;; Received 2136 bytes from 200.3.13.10#53(ns.lacnic.net) in 171 ms
+
