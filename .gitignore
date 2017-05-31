@@ -1,3 +1,4 @@
+.DS_Store
 post_to_slack_result.txt
 .vagrant
 *.jbk
