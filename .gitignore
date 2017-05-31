@@ -1,3 +1,4 @@
+post_to_slack_result.txt
 .vagrant
 *.jbk
 *.jnl
@@ -5,3 +6,5 @@
 *.err
 *.log
 *.tar.gz
+*.deb
+named.stats

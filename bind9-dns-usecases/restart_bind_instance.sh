@@ -1,23 +1,32 @@
-# Boot bind-based signer
+#!/bin/bash
+# Boot docker container for a specific DNS 'use case'
 # WD=/vagrant
-WD=$(pwd)
+# WD=$(pwd)
+# WD=$(dirname $0)
+WD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 INSTANCE=$1
+CONFIG_FILE=$2
 CONT_NAME="cm2c_$INSTANCE"
 HOST_PORT="53"
-BIND_OPTS="-d1"
+# BIND_OPTS="-d1"
+DOCKER_BIN="/usr/bin/docker"
+# DOCKER_OPTS="--ip6 2001:13c7:7003:0:fffe::1"
+# DOCKER_OPTS="--mac-address 00:00:00:00:00:01"
+# DOCKER_OPTS="--network mynet"
+BIND_OPTS="-g -c /v/dfiles/$INSTANCE/$CONFIG_FILE"
 # echo "# Booting bind instance $INSTANCE, with base $WD, mounted on /v"
 
 cd $WD
 
 # removing previous instances of the container, if any
 # echo "# removing previous instances of the container, if any"
-N=$(/usr/bin/docker rm -f $CONT_NAME)
+N=$($DOCKER_BIN rm -f $CONT_NAME)
 echo J=$J\;
 echo export J\;
 
 # echo "# starting new instance"
-J=$(/usr/bin/docker run -d --name=$CONT_NAME -p $HOST_PORT:5301 -p $HOST_PORT:5301/udp -v $WD:/v cm2c/basebind9:1.0 \
- /opt/bbsigner/sbin/named -4 -g $BIND_OPTS -c /v/dfiles/$INSTANCE/named.conf)
+J=$($DOCKER_BIN run $DOCKER_OPTS --name=$CONT_NAME -p $HOST_PORT:53 -p $HOST_PORT:53/udp -v $WD:/v cm2c/basebind9:1.0 \
+ /opt/bbsigner/sbin/named $BIND_OPTS)
 echo J=$J\;
 echo export J\;
 echo echo $CONT_NAME started\;

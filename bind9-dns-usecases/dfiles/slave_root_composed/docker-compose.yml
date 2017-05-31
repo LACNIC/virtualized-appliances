@@ -1,0 +1,18 @@
+version: '2'
+services:
+  recursive:
+    image: cm2c/basebind9:2.0
+    ports:
+     - '53:53'
+    volumes:
+     - ./slave_root_recursive:/v
+    depends_on:
+     - aroot
+    dns: 127.0.0.1
+    command: /opt/bbsigner/sbin/named -g -c /v/named.conf 
+  aroot:
+    image: cm2c/basebind9:2.0
+    volumes:
+     - ./slave_root:/v
+    dns: 127.0.0.1
+    command: /opt/bbsigner/sbin/named -g -c /v/named.conf 
