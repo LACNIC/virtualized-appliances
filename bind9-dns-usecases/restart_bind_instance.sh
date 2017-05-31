@@ -13,7 +13,8 @@ DOCKER_BIN="/usr/bin/docker"
 # DOCKER_OPTS="--ip6 2001:13c7:7003:0:fffe::1"
 # DOCKER_OPTS="--mac-address 00:00:00:00:00:01"
 # DOCKER_OPTS="--network mynet"
-BIND_OPTS="-g -c /v/dfiles/$INSTANCE/$CONFIG_FILE"
+DOCKER_OPTS="-d"
+BIND_OPTS=" -d1 -g -c /v/dfiles/$INSTANCE/$CONFIG_FILE"
 # echo "# Booting bind instance $INSTANCE, with base $WD, mounted on /v"
 
 cd $WD
