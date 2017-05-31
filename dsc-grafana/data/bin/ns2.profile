@@ -1,0 +1,3 @@
+SERVER="ns2"
+NODE="gru01"
+#FECHA="2017-05-08"

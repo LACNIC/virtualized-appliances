@@ -1,0 +1,6 @@
+SERVER="d.ip6"
+NODE="gru-reverse"
+#FECHA="2017-05-08"
+#SRC="rsync -avz carlos@d.ip6-servers.arpa:/usr/local/dsc/run/d.ip6-servers.arpa/upload/dns/2017-05-* d.ip6/"
+SRC="carlos@d.ip6-servers.arpa:/usr/local/dsc/run/d.ip6-servers.arpa/upload/dns/"
+#DST="/data/$SERVER"

@@ -1,0 +1,5 @@
+SERVER="d.in-addr"
+NODE="gru-reverse"
+#FECHA="2017-05-08"
+SRC="carlos@d.in-addr-servers.arpa:/usr/local/dsc/run/d.in-addr-servers.arpa/upload/dns"
+DST="/data/var/$SERVER"
