@@ -3,8 +3,8 @@
 WD=$(pwd)
 INSTANCE=$1
 CONT_NAME="cm2c_$INSTANCE"
-HOST_PORT="192.168.1.10:53"
-BIND_OPTS=""
+HOST_PORT="53"
+BIND_OPTS="-d1"
 # echo "# Booting bind instance $INSTANCE, with base $WD, mounted on /v"
 
 cd $WD
