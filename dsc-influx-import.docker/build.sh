@@ -1,1 +1,1 @@
-docker build -t lacniclabs/dsc2influx:1.0 .
+docker build $@ -t lacniclabs/dsc2influx:1.0 .
