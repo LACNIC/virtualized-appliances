@@ -7,4 +7,4 @@ RUN apt-get install -y git libmodule-find-perl libxml-libxml-simple-perl libyaml
 RUN cpanm --notest IP::Authority IP::Country::Fast
 RUN git clone https://github.com/DNS-OARC/dsc-datatool.git /root/dsc-datatool
 RUN /root/dsc-datatool/contrib/iana-dns-parameters/fetch-yaml-for-labler.pl > /root/labler.yaml
-VOLUME ["/data"]
+VOLUME ["/data", "/keys"]
