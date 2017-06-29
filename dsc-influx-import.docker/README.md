@@ -24,6 +24,14 @@ To run a specific stage
 DATE=YYYY-MM-DD PROFILE={d.ip6 | d.in-addr} ./{fetch | process | post}.sh
 ```
 
+### Clean
+
+To clean all generated files
+
+```shell
+./clean.sh
+```
+
 ## Notes
 
 Docker for Mac struggles with IPv6, so when running this scripts from Docker for Mac the Influx service has to be exposed on an IPv4 address.
