@@ -4,6 +4,14 @@ dsc is the *DNS statistics collector*, influxDB is a very well known timeseries 
 
 ## Usage
 
+### Build
+
+```shell
+./build.sh
+```
+
+### Run
+
 To run the full pipeline ( fetch && process && post)
 
 ```bash
