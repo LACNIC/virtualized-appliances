@@ -1,2 +1,11 @@
 #!/bin/bash
-curl -i -XPOST 'http://179.0.156.40:8086/write?db=dsc&u=datosdsc&p=dsc2017datos' --data-binary @$1
+HOST='influx.dev.lacnic.net'
+PORT='8086'
+DB='dsc'
+INFLUX_USR=''
+INFLUX_PASS=''
+
+URL="http://$HOST:$PORT/write?db=$DB"
+
+curl -i -XPOST "http://$HOST:$PORT/write?db=$DB" --data-binary @$1
+#curl -i -XPOST "http://$HOST:$PORT/write?db=$DB&u=$INFLUX_USR&p=$INFLUX_PASS" --data-binary @$1

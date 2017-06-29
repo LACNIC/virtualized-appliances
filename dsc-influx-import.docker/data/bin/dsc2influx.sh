@@ -4,7 +4,6 @@
 # FECHA="2017-05-09"
 echo SOURCING PROFILE $1 for DATE $2
 source $1
-DST="/data/var/$SERVER"
 FECHA=$2
 XMLDIR="/data/var/$SERVER/$FECHA"
 OUTPUTDIR="/data/var/$SERVER/influx"
