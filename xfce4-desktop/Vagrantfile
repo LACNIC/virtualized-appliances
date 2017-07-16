@@ -76,6 +76,10 @@ Vagrant.configure(2) do |config|
   SHELL
   
   config.vm.provision "shell", inline: <<-SHELL
+    # Fix dictionaries-common
+    /usr/share/debconf/fix_db.pl
+    sudo apt-get -y upgrade
+    sudo apt-get -y install git iceweasel
     echo "Hola!"
   SHELL
   
