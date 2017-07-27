@@ -1,4 +1,4 @@
-echo $@
+#!/bin/bash
 
 [ -z "$1" ] || PROFILE=$1
 [ -z "$2" ] || DATE=$2
