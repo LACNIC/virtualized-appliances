@@ -1,0 +1,46 @@
+# Run Docker containers from Vagrant
+#
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.network "public_network", ip: "200.40.98.123/29"
+
+  config.vm.synced_folder "dfiles", "/opt/dfiles"
+  config.vm.synced_folder "etc", "/opt/etc",
+	mount_options: ["dmode=777,fmode=777"]
+
+  config.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      vb.gui = false
+      # Customize the amount of memory on the VM:
+      vb.memory = "2048"
+      # name
+      vb.name = "quagga-router"
+   end
+
+   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
+  config.vm.provision "shell", inline: <<-SHELL
+    #sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
+    sudo mkdir -p /opt/config || /bin/true
+    sudo mkdir -p /opt/dfiles || /bin/true
+    # sudo apt-get -y update
+    # sudo apt-get -y dist-upgrade
+    sudo cp /vagrant/dfiles/environment /etc/environment
+  SHELL
+
+  config.vm.provision "shell", inline: <<-SHELL
+        sudo apt-get -y update
+	sudo apt-get -y install virtualbox-guest-utils virtualbox-guest-x11
+        sudo apt-get -y install quagga quagga-doc
+        sudo chmod 777 /etc/quagga # INSECURE !!
+        sudo chmod 777 /etc/quagga/* # INSECURE !!
+        # sudo mv /etc/quagga /etc/quagga.ORG
+        # sudo ln -sf /opt/etc/quagga /etc/quagga
+        sudo cp /opt/etc/quagga/* /etc/quagga
+	sudo service quagga restart
+	echo "Provisioning completed!"
+  SHELL
+
+end
