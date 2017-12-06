@@ -3,7 +3,7 @@
 #
 ####################################################################################
 
-FROM ubuntu:15.04
+FROM ubuntu:16.04
 MAINTAINER carlos@xt6.us
 WORKDIR /root
 RUN apt-get update
