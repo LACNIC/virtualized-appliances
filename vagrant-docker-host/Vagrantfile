@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "ubuntu/wily64"
+  config.vm.box = "ubuntu/xenial64"
   config.vm.network "forwarded_port", guest: 80, host: 8087
 
   config.vm.synced_folder "dfiles", "/opt/dfiles"
@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "docker" do |d|
     d.pull_images "ubuntu:16.04"
-    d.pull_images "ubuntu:15.04"
+    # d.pull_images "ubuntu:15.04"
   end
 
   config.vm.provision "shell", inline: <<-SHELL
