@@ -1,0 +1,45 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Type `vagrant up desktop` to launch
+Vagrant.configure(2) do |config|
+  # Ubuntu 16.04
+  config.vm.box = "ubuntu/xenial32"
+
+  config.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
+    vb.gui = true
+	
+	# add cdrom
+	vb.customize ["storageattach", :id, 
+				"--storagectl", "IDE", 
+				"--port", "0", "--device", "1", 
+				"--type", "dvddrive", 
+				"--medium", "emptydrive"]    
+	
+  end
+
+  # Install xfce and virtualbox additions
+  config.vm.provision "shell", inline: "sudo apt-get update"
+  config.vm.provision "shell", inline: "sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11"
+  # Permit anyone to start the GUI
+  # config.vm.provision "shell", inline: "sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config"
+
+  # http://download.virtualbox.org/virtualbox/5.2.16/VBoxGuestAdditions_5.2.16.iso
+  config.vm.provision "shell", inline: <<-SHELL
+    # Fix dictionaries-common
+    # /usr/share/debconf/fix_db.pl
+    # sudo apt-get -y upgrade
+    # sudo apt-get -y install build-essential git iceweasel
+    # sudo apt-get -y install xserver-xorg-legacy
+	echo Updating VBoxGuestAdditions_5
+	cd /home/vagrant
+	sudo apt-get install -y wget
+	wget http://download.virtualbox.org/virtualbox/5.2.16/VBoxGuestAdditions_5.2.16.iso
+	sudo mount VBoxGuestAdditions_5.2.16.iso -o loop /mnt
+	cd /mnt
+	echo yes | sudo sh VBoxLinuxAdditions.run 
+    echo "Hola!"
+  SHELL
+  
+  end
